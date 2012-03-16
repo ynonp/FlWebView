@@ -1,0 +1,26 @@
+FlWebView
+
+QWebView is a very useful widget but it has two major annoyances:
+
+1. When users drop stuff in a QWebView, the web view opens that something
+2. QWebView by default does not open new windows
+
+To solve both issues, a developer needs to extend QWebView with her
+own subclass - which can be annoying.
+
+FlWebView is a simple Qt class which extends QWebView and gives developers
+the options to easily specify the behavior they want.
+
+It also fix both annoyances by default.
+
+Sample usage:
+
+  // Get a web view that forbids dropping and opens new windows
+  FlWebView wv;
+  wv.load(QUrl("http://www.google.com"));
+  wv.show();
+
+  // allow dropping stuff into the web view
+  wv.setOption(WV_IGNORE_DROPS, false);
+
+All files in this repository are licensed BSD
